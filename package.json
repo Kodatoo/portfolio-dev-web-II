@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,5 @@
   "bugs": {
     "url": "https://github.com/Kodatoo/portfolio-dev-web-II/issues"
   },
-  "homepage": "https://github.com/Kodatoo/portfolio-dev-web-II#readme",
-  "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^5.1.0"
-  }
+  "homepage": "https://github.com/Kodatoo/portfolio-dev-web-II#readme"
 }
