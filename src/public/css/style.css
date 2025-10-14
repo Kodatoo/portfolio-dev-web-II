@@ -5,3 +5,10 @@ body {
   background-color: #0D1B2A; /* cor de fundo */
   color: #E0E1DD;
 }
+
+.home{
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+}
