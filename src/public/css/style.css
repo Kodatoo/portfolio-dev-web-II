@@ -6,9 +6,143 @@ body {
   color: #E0E1DD;
 }
 
-.home{
+/* .home{
   display: grid;
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
+} */
+
+.navbar {
+  background-color: #1f2937;
+  padding: 1rem;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #60a5fa;
+}
+
+img{
+  width: 30%;
+  height: auto;
+}
+
+/* AJUSTE NA IMAGEM: Garante que a foto tenha um tamanho razoável */
+/* AJUSTE NA IMAGEM: Usando % e 'max-width' para responsividade */
+img {
+  /* Define a largura como 20% do container pai (.texto-intro)
+     ou um tamanho máximo de 250px para telas grandes */
+  width: 25%; 
+  max-width: 250px; /* Impede que a imagem fique gigante em telas muito grandes */
+  
+  /* Faz a altura ser igual à largura (para manter o círculo/quadrado) */
+  aspect-ratio: 1 / 1; 
+  
+  object-fit: cover; 
+  border-radius: 50%; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* AJUSTE EM .texto-intro: Mantém o Flexbox e o alinhamento */
+.texto-intro {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 3rem; 
+  max-width: 1000px; 
+  margin: 4rem auto; 
+  padding: 0 20px; 
+}
+
+/* AJUSTE NO TEXTO PARA FICAR BEM ALINHADO */
+.texto-intro p {
+  margin: 0; 
+  /* Substituímos 450px por uma porcentagem do container. 
+     Isso garante que o texto ocupe mais espaço que a imagem, mas respeitando o container */
+  max-width: 50%; 
+  font-size: 1.3rem; 
+  line-height: 1.6;
+}
+
+.home h1 {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 2.5rem;
+}
+/* -------------------------------------- */
+/* 2. DEFINIÇÃO DAS ANIMAÇÕES (KEYFRAMES) */
+/* -------------------------------------- */
+
+/* Animação para o texto vindo da esquerda */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); /* Começa fora da tela, à esquerda */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Termina na posição original */
+    opacity: 1;
+  }
+}
+
+/* Animação para a imagem vindo da direita */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%); /* Começa fora da tela, à direita */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Termina na posição original */
+    opacity: 1;
+  }
+}
+
+/* -------------------------------------- */
+/* 3. APLICAÇÃO DAS ANIMAÇÕES */
+/* -------------------------------------- */
+
+/* Aplicar a animação ao parágrafo (texto) */
+.texto-intro p {
+  /* ... estilos existentes ... */
+  
+  /* Aplica a animação: nome, duração, função de tempo, atraso, modo */
+  animation: slideInFromLeft 1s ease-out 0.5s forwards; 
+  opacity: 0; /* Começa com opacidade 0 para evitar piscar */
+}
+
+/* Aplicar a animação à imagem */
+.texto-intro img {
+  /* ... estilos existentes ... */
+  
+  /* Aplica a animação: nome, duração, função de tempo, atraso (um pouco depois do texto) */
+  animation: slideInFromRight 1s ease-out 0.8s forwards;
+  opacity: 0; /* Começa com opacidade 0 */
+}
+
+/* Opcional: Animação para o Título (vindo de cima) */
+@keyframes fadeInFromTop {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.home h1 {
+  /* ... estilos existentes ... */
+  animation: fadeInFromTop 0.8s ease-out forwards;
+  opacity: 0;
 }
