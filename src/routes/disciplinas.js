@@ -2,7 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('Página sobre (em construção)');
+  
+
+  let paginadisciplina = {
+    title: "Disiciplinas"
+  }
+
+  res.render('pages/disciplinas', paginadisciplina)
 });
 
 module.exports = router;
