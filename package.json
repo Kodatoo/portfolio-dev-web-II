@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/Kodatoo/portfolio-dev-web-II/issues"
   },
-  "homepage": "https://github.com/Kodatoo/portfolio-dev-web-II#readme"
+  "homepage": "https://github.com/Kodatoo/portfolio-dev-web-II#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
 }

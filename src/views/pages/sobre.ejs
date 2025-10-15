@@ -12,7 +12,17 @@
     
     <%- include('../partials/navbar') %>
 
-    <h1>Conteúdo da página sobre</h1>
-    
+    <h1>Sobre mim</h1>
+        <div class="texto-sobre-mim">
+            <p>
+                Sou <strong><%= dadossobremim.nome %></strong>, tenho 
+                <strong><%= dadossobremim.idade %> anos</strong>, sou fascinado 
+                por tecnologia desde pequeno, e busco sempre por aprendizado na área, 
+                atualmente estou cursando <strong><%= dadossobremim.curso %> </strong>
+                na <strong> <%= dadossobremim.instituicao %> (Ano de ingresso: <%= dadossobremim.anoIngresso %>) </strong>.
+                <br> <br>
+                Atualmente, estou em um estágio dinâmico na área de Tecnologia da Informação (TI) na<strong> <%= dadossobremim.estagio %></strong>, onde aprofundo meus conhecimentos práticos em hardware e software. Minha experiência é complementada por um trabalho como garçom freelancer no <strong><%= dadossobremim.armazem %></strong>, demonstrando minha capacidade de gerenciamento de tempo e atendimento ao cliente. Com um histórico de trabalho anterior na Atento, meu foco principal é a constante busca por aprendizado e crescimento na área da programação e desenvolvimento.
+            </p>
+        </div>
     </body>
 </html>

@@ -4,4 +4,59 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #0D1B2A; /* cor de fundo */
   color: #E0E1DD;
+  text-align: justify;
+}
+
+h1{
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 2.5rem;
+  animation: fadeInFromTop 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.texto-sobre-mim{
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 1rem; 
+  max-width: 1000%; 
+  margin: 4rem auto; 
+  padding: 0 10%; 
+}
+
+.texto-sobre-mim > p{
+  margin: 0; 
+  max-width: 50%; 
+  font-size: 1.3rem; 
+  line-height: 1.6;
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); /* Começa fora da tela, à esquerda */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Termina na posição original */
+    opacity: 1;
+  }
+}
+
+/* Animação para a imagem vindo da direita */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%); /* Começa fora da tela, à direita */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Termina na posição original */
+    opacity: 1;
+  }
+}
+
+.texto-sobre-mim p {
+  animation: slideInFromLeft 1s ease-out 0.5s forwards; 
+  opacity: 0; /* Começa com opacidade 0 para evitar piscar */
 }
