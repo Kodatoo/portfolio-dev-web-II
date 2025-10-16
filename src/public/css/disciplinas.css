@@ -151,60 +151,57 @@ h1 {
     animation-delay: 0.2s; 
 }
 
-/* Aplica a animação da direita para a caixa 'Concluídas' */
+/* aplica a animação da direita para a caixa 'Concluídas' */
 .concluidas {
     animation: slideInFromRight 1s ease-out forwards; 
-    /* Delay para que esta caixa apareça um pouco depois da outra */
+    /* delay para que esta caixa apareça um pouco depois da outra */
     animation-delay: 0.4s; 
 }
 
 form {
-    /* Centraliza o formulário na tela */
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    /* Largura relativa, centralizada e com padding */
+
     width: 90%; 
-    max-width: 30rem; /* Limite de largura para não ficar muito largo */
-    margin: 3rem auto 0 auto; /* Espaço acima das caixas */
+    max-width: 30rem; 
+    margin: 3rem auto 0 auto; /
     padding: 1.5rem;
     
-    /* Cor de fundo igual a das boxes para consistência */
     background-color: #1B263B; 
     border-radius: 0.625rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     font-family: 'Montserrat', sans-serif;
     opacity: 0; /* Começa invisível */
-    animation: slideInFromTop 0.8s ease-out forwards; /* Aplica a animação */
-    animation-delay: 0.1s; /* Aparece primeiro que as boxes laterais */
+    animation: slideInFromTop 0.8s ease-out forwards; /* aplica a animação */
+    animation-delay: 0.1s; /* aparece primeiro que as boxes laterais */
 }
 
 /* Estilo para os campos de input e select */
 form input[type="text"], 
 form select {
     width: 100%;
-    /* Padding e altura em 'rem' */
     padding: 0.75rem; 
     margin-bottom: 1rem;
     
-    background-color: #415A77; /* Cor do input mais clara que o fundo */
+    background-color: #415A77; /* cor do input mais clara que o fundo */
     color: #E0E1DD;
     
     /* Borda suave e arredondada */
     border: 1px solid #778DA9;
     border-radius: 0.3125rem;
     font-size: 1rem;
-    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+    box-sizing: border-box; /* garante que padding não aumente a largura total */
 }
 
-/* Estilo para o placeholder */
+/* estilo para placeholder*/
 form input[type="text"]::placeholder {
     color: #E0E1DD;
     opacity: 0.7;
 }
 
-/* Foco nos campos (quando o usuário clica) */
+/* Quando o usuário clica */
 form input[type="text"]:focus, 
 form select:focus {
     outline: none;
@@ -233,10 +230,46 @@ form button[type="submit"]:hover {
     background-color: #90A4C0;
 }
 
+.box-disciplina li .btn-excluir {
+    float: right;  /* mesma linha da disciplina */
+    
+
+    background-color: #C62828; 
+    color: #E0E1DD; 
+    
+    padding: 0.3rem 0.6rem; 
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    
+    /* longe da disciplina */
+    margin-left: 1rem;
+}
+
+/* efeito hover */
+.box-disciplina li .btn-excluir:hover {
+    background-color: #E53935; 
+}
+
+.box-disciplina li .btn-excluir:active {
+    /* efeito ao clicar */
+    transform: scale(0.98); 
+}
+
+
+.box-disciplina li {
+    overflow: hidden;
+}
+
 @media (max-width: 480px) {
     form {
         margin-top: 2rem;
         padding: 1rem;
     }
 }
-/* ANIMAÇÃO PARA O FORMULÁRIO VINDO DE CIMA */
+

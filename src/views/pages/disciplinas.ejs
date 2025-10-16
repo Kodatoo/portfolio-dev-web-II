@@ -21,7 +21,8 @@
         <h2>Em andamento!</h2>
         <ul>
             <% for (let i = 0; i < disciplinas_em_curso.length; i++) { %>
-                <li><%= disciplinas_em_curso[i] %></li>
+                <li><%= disciplinas_em_curso[i] %>
+                <button class="btn-excluir" onclick="excluirDisciplina('<%= i %>', 'curso')">Excluir</button></li>
             <% } %>
         </ul>
     </div>
@@ -30,7 +31,8 @@
         <h2>Concluídas!</h2>
         <ul>
             <% for (let i = 0; i < disciplinas_concluidas.length; i++) { %>
-                <li><%= disciplinas_concluidas[i] %></li> 
+                <li><%= disciplinas_concluidas[i] %>
+                <button class="btn-excluir" onclick="excluirDisciplina('<%= i %>', 'curso')">Excluir</button></li> 
             <% } %>
         </ul>
     </div>
@@ -45,5 +47,16 @@
   <button type="submit">Adicionar</button>
 </form>
 
+
+<script>
+async function excluirDisciplina(index, tipo) {
+  if (confirm("Tem certeza que deseja excluir esta disciplina?")) {
+    await fetch(`/disciplinas/${tipo}/${index}`, {
+      method: 'DELETE'
+    });
+    location.reload(); // recarrega a página pra mostrar o novo estado
+  }
+}
+</script>
 </body>
 </html>

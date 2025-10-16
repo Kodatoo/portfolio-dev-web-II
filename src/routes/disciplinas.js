@@ -44,4 +44,13 @@ router.post('/', (req, res) => {
 });
 
 
+router.delete('/:tipo/:index', (req, res) => {
+  const { tipo, index } = req.params;
+
+  if (tipo === "curso") disciplinas_em_curso.splice(index, 1);
+  else disciplinas_concluidas.splice(index, 1);
+
+  res.sendStatus(200);
+});
+
 module.exports = router;
