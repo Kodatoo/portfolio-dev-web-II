@@ -33,4 +33,15 @@ router.get('/', (req, res) => {
   res.render('pages/disciplinas', paginadisciplina)
 });
 
+router.post('/', (req, res) => {
+  const { novaDisciplina, tipo } = req.body;
+  if (tipo === "curso") {
+    disciplinas_em_curso.push(novaDisciplina);
+  } else {
+    disciplinas_concluidas.push(novaDisciplina);
+  }
+  res.redirect('/disciplinas');
+});
+
+
 module.exports = router;

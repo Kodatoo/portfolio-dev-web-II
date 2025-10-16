@@ -35,5 +35,15 @@
         </ul>
     </div>
 </div>
+
+<form action="/disciplinas" method="POST">
+  <input type="text" name="novaDisciplina" placeholder="Nova disciplina" required>
+  <select name="tipo">
+    <option value="curso">Em andamento</option>
+    <option value="concluida">Concluída</option>
+  </select>
+  <button type="submit">Adicionar</button>
+</form>
+
 </body>
 </html>

@@ -5,6 +5,8 @@ const app = express();
 // === Configuração do EJS ===
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'));
+app.use(express.urlencoded({ extended: true }));
+
 
 // === Middleware para arquivos estáticos (CSS, imagens, JS front-end) ===
 app.use(express.static(path.join(__dirname, 'src', 'public')));
