@@ -1,7 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
+
+
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #0D1B2A; /* cor de fundo */
-  color: #E0E1DD;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0D1B2A; 
+    color: #E0E1DD; 
+    margin: 0; 
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 4rem; 
+    margin-bottom: 2rem;
+    font-size: 2.5rem; 
+     animation: fadeInFromTop 0.8s ease-out forwards;
+}
+
+/* Estilo para o container grid que separa as duas caixas */
+.divisao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; 
+    width: 90%; 
+    margin: 0 auto; 
+    max-width: 75rem; 
+}
+
+/* Estilo para ambas as caixas de disciplina */
+.box-disciplina {
+    background-color: #1B263B;
+    padding: 1.25rem; 
+    border-radius: 0.625rem; 
+    min-height: 20rem; 
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); 
+    opacity: 0;
+}
+
+.box-disciplina h2 {
+    color: #415A77; 
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 0.625rem;
+    border-bottom: 0.125rem solid #415A77; 
+    margin-bottom: 1.25rem;
+}
+
+/* Estilos de Lista */
+.box-disciplina ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.box-disciplina li {
+    background-color: #415A77;
+    padding: 0.625rem 0.9375rem; /* ~10px 15px */
+    margin-bottom: 0.625rem; 
+    border-radius: 0.3125rem; /* ~5px */
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.box-disciplina li:hover {
+    background-color: #778DA9;
+    color: #0D1B2A;
+}
+
+
+
+@media (max-width: 768px) {
+    .divisao {
+        /* Muda de 2 colunas para 1 coluna em telas menores */
+        grid-template-columns: 1fr;
+        /* Aumenta a distância entre as caixas na vertical */
+        gap: 3rem; 
+    }
+    
+    h1 {
+        /* Diminui o título principal em telas menores */
+        font-size: 2rem; 
+    }
+    
+    .box-disciplina {
+        /* Diminui a altura mínima no mobile */
+        min-height: 15rem; 
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Começa fora da tela, à esquerda */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Termina na posição original */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Começa fora da tela, à direita */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Termina na posição original */
+        opacity: 1;
+    }
+}
+
+.andamento {
+    animation: slideInFromLeft 1s ease-out forwards; 
+    /* Delay para que esta caixa apareça um pouco antes da outra */
+    animation-delay: 0.2s; 
+}
+
+/* Aplica a animação da direita para a caixa 'Concluídas' */
+.concluidas {
+    animation: slideInFromRight 1s ease-out forwards; 
+    /* Delay para que esta caixa apareça um pouco depois da outra */
+    animation-delay: 0.4s; 
 }

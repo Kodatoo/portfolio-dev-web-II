@@ -7,13 +7,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>disciplina</title>
-    <link rel="stylesheet" href="/css/disiciplinas.css">
+    <link rel="stylesheet" href="/css/disciplinas.css">
 </head>
 <body>
 
     <%- include('../partials/navbar') %>
 
+    <h1>Minhas disciplinas!</h1>
     
+ <div class="divisao">
     
+    <div class="andamento box-disciplina">
+        <h2>Em andamento!</h2>
+        <ul>
+            <% for (let i = 0; i < disciplinas_em_curso.length; i++) { %>
+                <li><%= disciplinas_em_curso[i] %></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="concluidas box-disciplina">
+        <h2>Concluídas!</h2>
+        <ul>
+            <% for (let i = 0; i < disciplinas_concluidas.length; i++) { %>
+                <li><%= disciplinas_concluidas[i] %></li> 
+            <% } %>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
