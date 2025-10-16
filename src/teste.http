@@ -1,0 +1,21 @@
+### Teste da rota POST /disciplinas
+POST http://localhost:5000/disciplinas
+Content-Type: application/json
+
+{
+  "novaDisciplina": "Lógica de Programação",
+  "tipo": "curso"
+}
+### Ver disciplinas como JSON (API)
+GET http://localhost:5000/disciplinas/api
+
+
+### Teste da rota POST /disciplinas
+DELETE  http://localhost:5000/disciplinas
+Content-Type: application/json
+
+{
+    "tipo": "Em andamento!",
+    "index": 1
+}
+

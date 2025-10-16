@@ -30,6 +30,13 @@ router.get('/', (req, res) => {
     disciplinas_concluidas
   }
 
+  router.get('/api', (req, res) => { // rota que mostra as disciplinas em JSON
+    res.json({
+      curso: disciplinas_em_curso,
+      concluidas: disciplinas_concluidas
+    });
+  }); 
+
   res.render('pages/disciplinas', paginadisciplina)
 });
 
