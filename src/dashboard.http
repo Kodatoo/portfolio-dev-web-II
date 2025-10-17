@@ -1,0 +1,37 @@
+### POST - Adicionar disciplina
+POST http://localhost:5000/dashboard/api
+Content-Type: application/json
+
+{
+  "novaDisciplina": "Inteligência Artificial",
+  "tipo": "curso"
+}
+
+### GET - Ver dashboard API
+GET http://localhost:5000/dashboard/api
+
+### PUT - Atualizar disciplina (índice 0)
+PUT http://localhost:5000/dashboard/api
+Content-Type: application/json
+
+{
+  "index": 0,
+  "novoNome": "Lógica e Programação Avançada",
+  "tipo": "curso"
+}
+###
+DELETE http://localhost:5000/dashboard/api
+Content-Type: application/json
+
+{
+  "tipo": "curso",
+  "index": 1
+}
+###
+POST http://localhost:5000/dashboard/api
+Content-Type: application/json
+
+{
+  "novaDisciplina": "Inteligência Artificial",
+  "tipo": "curso"
+}
