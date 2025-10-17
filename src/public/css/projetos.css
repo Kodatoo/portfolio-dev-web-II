@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+    margin: 0;
+    padding: 20px;
+    text-align: justify;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #E0E1DD;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.projetos-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projeto-box {
+    background-color: #1B263B;
+    border-radius: 12px;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Efeito de Transição e Hover */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+    /* Animação de Entrada */
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0; 
+}
+
+/* Efeito de Levantamento e Zoom no Hover */
+.projeto-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Atraso na Animação para Efeito de Cascata */
+.projeto-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.projeto-box:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.projeto-box:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+
+.projeto-box h2 {
+    margin-top: 0;
+    color: #60a5fa;
+    text-align: center;
+}
+
+.projeto-box img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin: 15px 0;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom na imagem ao passar o mouse sobre a caixa */
+.projeto-box:hover img {
+    transform: scale(1.05);
+}
+
+.projeto-box p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.btn-github {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #0A66C2;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-github:hover {
+    background-color: #074a90;
+}
+
+/* Keyframes para a animação de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .projeto-box {
+        width: 100%;
+    }
+}

@@ -10,7 +10,7 @@ Content-Type: application/json
 GET http://localhost:5000/disciplinas/api
 
 
-### Teste da rota POST /disciplinas
+### Teste da rota DDLETE /disciplinas
 DELETE  http://localhost:5000/disciplinas
 Content-Type: application/json
 
@@ -19,3 +19,35 @@ Content-Type: application/json
     "index": 1
 }
 
+### TESTE DA ROTA POST HOME
+POST http://localhost:5000/
+Content-Type: application/json
+
+{
+  "Texto": "Esse é um novo texto enviado via POST"
+}
+
+
+### VOLTANDO O TEXTO DA HOME
+POST http://localhost:5000/reset-home
+Content-Type: application/json
+
+### Atualizar nome via POST
+POST http://localhost:5000/sobre
+Content-Type: application/json
+
+{
+  "nome": "Gabriel Kodato"
+}
+
+### Atualizar texto via PUT
+PUT http://localhost:5000/
+Content-Type: application/json
+
+{
+  "Texto": "Texto atualizado via PUT para teste."
+}
+
+###
+POST http://localhost:5000/sobre/reset-sobre
+Content-Type: application/json

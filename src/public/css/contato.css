@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 40px auto 30px auto;
+    color: #E0E1DD;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+}
+
+.contatos {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.contatos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contatos li {
+    background-color: #1B263B;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Aplica a animação de entrada com um tempo base */
+    animation: slideInFromLeft 0.6s ease-out forwards;
+    opacity: 0; /* Começa invisível */
+}
+
+/* Efeito de cascata (atraso para cada item) */
+.contatos li:nth-child(1) { animation-delay: 0.1s; }
+.contatos li:nth-child(2) { animation-delay: 0.3s; }
+.contatos li:nth-child(3) { animation-delay: 0.5s; }
+
+
+.contatos li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contatos li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contatos li a i {
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.contatos li:nth-child(1):hover { background-color: #0A66C2; }
+.contatos li:nth-child(1) i { color: #0A66C2; }
+
+.contatos li:nth-child(2):hover { background-color: #181717; }
+.contatos li:nth-child(2) i { color: #181717; }
+
+.contatos li:nth-child(3):hover { background-color: #D44638; }
+.contatos li:nth-child(3) i { color: #D44638; }
+
+.contatos li:hover a i { color: #E0E1DD; }
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

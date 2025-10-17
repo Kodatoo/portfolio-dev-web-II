@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+</head>
+<body>
+
+  <%- include('../partials/navbar') %>
+
+  <main class="dashboard">
+    <h1>📊 Dashboard</h1>
+
+    <div class="stats-container">
+
+      <div class="card">
+        <h2>Total de Disciplinas</h2>
+        <p><%= totalDisciplinas %></p>
+      </div>
+
+      <div class="card">
+        <h2>Projetos Concluídos</h2>
+        <p><%= numeroProjetos %></p>
+      </div>
+
+      <div class="card">
+        <h2>Tecnologias Mais Usadas</h2>
+        <ul>
+          <% tecnologiasMaisUsadas.forEach(tec => { %>
+            <li><%= tec %></li>
+          <% }) %>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

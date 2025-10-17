@@ -1,0 +1,32 @@
+<%- include('../partials/header') %> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/projetos.css" />
+</head>
+<body>
+
+  <%- include('../partials/navbar') %>
+
+  <main class="container">
+    <h1><%= title %></h1>
+    
+    <div class="projetos-wrapper">
+      <% projetos.forEach(projeto => { %>
+        <div class="projeto-box">
+          <h2><%= projeto.titulo %></h2>
+          <img src="<%= projeto.gif %>" alt="GIF do projeto <%= projeto.titulo %>" />
+          <p><%= projeto.descricao %></p>
+          <p><strong>Minha participação:</strong> <%= projeto.introducao %></p>
+          <a href="<%= projeto.github %>" target="_blank" class="btn-github">Ver no GitHub</a>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+
+</body>
+</html>
+    
