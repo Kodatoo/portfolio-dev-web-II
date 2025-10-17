@@ -1,0 +1,20 @@
+POST http://localhost:5000/projetos/api
+Content-Type: application/json
+
+{
+  "titulo": "Novo Projeto",
+  "descricao": "Descrição do novo projeto",
+  "github": "https://github.com/exemplo",
+  "gif": "/img/novo.gif",
+  "introducao": "Minha participação no projeto"
+}
+###
+PUT http://localhost:5000/projetos/api/0
+Content-Type: application/json
+
+{
+  "titulo": "API CROWS Atualizada",
+  "introducao": "Atualização da introdução do projeto"
+}
+###
+GET http://localhost:5000/projetos/api
