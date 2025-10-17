@@ -6,7 +6,7 @@ Accept: text/html
 GET http://localhost:5000/disciplinas/api
 Accept: application/json
 
-### POST - Adicionar disciplina em curso
+### POST 
 POST http://localhost:5000/disciplinas/api
 Content-Type: application/json
 
@@ -15,7 +15,7 @@ Content-Type: application/json
   "tipo": "curso"
 }
 
-### POST - Adicionar disciplina concluída
+### POST 
 POST http://localhost:5000/disciplinas/api
 Content-Type: application/json
 
@@ -24,7 +24,7 @@ Content-Type: application/json
   "tipo": "concluida"
 }
 
-### DELETE - Remover disciplina em curso (índice 0)
+### DELETE 
 DELETE http://localhost:5000/disciplinas/api
 Content-Type: application/json
 
@@ -33,7 +33,7 @@ Content-Type: application/json
   "index": 0
 }
 
-### DELETE - Remover disciplina concluída (índice 1)
+### DELETE 
 DELETE http://localhost:5000/disciplinas/api
 Content-Type: application/json
 
