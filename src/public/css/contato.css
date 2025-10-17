@@ -43,13 +43,11 @@ h1 {
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    
-    /* Aplica a animação de entrada com um tempo base */
-    animation: slideInFromLeft 0.6s ease-out forwards;
+    animation: slideInFromLeft 0.6s ease-out forwards;     /* Aplica a animação de entrada com um tempo base */
     opacity: 0; /* Começa invisível */
 }
 
-/* Efeito de cascata (atraso para cada item) */
+
 .contatos li:nth-child(1) { animation-delay: 0.1s; }
 .contatos li:nth-child(2) { animation-delay: 0.3s; }
 .contatos li:nth-child(3) { animation-delay: 0.5s; }

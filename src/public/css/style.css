@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #0D1B2A; /* cor de fundo */
+  background-color: #0D1B2A; 
   color: #E0E1DD;
 }
 
@@ -40,14 +40,14 @@ img{
 
 img {
   width: 25%; 
-  max-width: 250px; /* Impede que a imagem fique gigante em telas muito grandes */
+  max-width: 250px; /* impede que a imagem fique gigante em telas muito grandes */
   aspect-ratio: 1 / 1; 
   object-fit: cover; 
   border-radius: 50%; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* AJUSTE EM .texto-intro: Mantém o Flexbox e o alinhamento */
+
 .texto-intro {
   display: flex;
   align-items: center; 
@@ -58,7 +58,7 @@ img {
   padding: 0 20%; 
 }
 
-/* AJUSTE NO TEXTO PARA FICAR BEM ALINHADO */
+
 .texto-intro p {
   margin: 0; 
   max-width: 50%; 
@@ -75,23 +75,23 @@ img {
 /* Animação para o texto vindo da esquerda */
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%); /* Começa fora da tela, à esquerda */
+    transform: translateX(-100%); 
     opacity: 0;
   }
   100% {
-    transform: translateX(0); /* Termina na posição original */
+    transform: translateX(0); 
     opacity: 1;
   }
 }
 
-/* Animação para a imagem vindo da direita */
+
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(100%); /* Começa fora da tela, à direita */
+    transform: translateX(100%);
     opacity: 0;
   }
   100% {
-    transform: translateX(0); /* Termina na posição original */
+    transform: translateX(0); 
     opacity: 1;
   }
 }
@@ -99,10 +99,10 @@ img {
 
 .texto-intro p {
   animation: slideInFromLeft 1s ease-out 0.5s forwards; 
-  opacity: 0; /* Começa com opacidade 0 para evitar piscar */
+  opacity: 0; 
 }
 
-/* Aplicar a animação à imagem */
+
 .texto-intro img {
 
   animation: slideInFromRight 1s ease-out 0.8s forwards;
@@ -115,7 +115,6 @@ img {
 }
 
 .home h1 {
-  /* ... estilos existentes ... */
   animation: fadeInFromTop 0.8s ease-out forwards;
   opacity: 0;
 }

@@ -144,15 +144,13 @@ h1 {
 }
 
 .andamento {
-    animation: slideInFromLeft 1s ease-out forwards; 
-    /* Delay para que esta caixa apareça um pouco antes da outra */
+    animation: slideInFromLeft 1s ease-out forwards;     /* Delay para que esta caixa apareça um pouco antes da outra */
     animation-delay: 0.2s; 
 }
 
-/* aplica a animação da direita para a caixa 'Concluídas' */
+
 .concluidas {
     animation: slideInFromRight 1s ease-out forwards; 
-    /* delay para que esta caixa apareça um pouco depois da outra */
     animation-delay: 0.4s; 
 }
 
@@ -172,26 +170,26 @@ form {
     border-radius: 0.625rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     font-family: 'Montserrat', sans-serif;
-    opacity: 0; /* Começa invisível */
-    animation: slideInFromTop 0.8s ease-out forwards; /* aplica a animação */
-    animation-delay: 0.1s; /* aparece primeiro que as boxes laterais */
+    opacity: 0; 
+    animation: slideInFromTop 0.8s ease-out forwards;
+    animation-delay: 0.1s; 
 }
 
-/* Estilo para os campos de input e select */
+
 form input[type="text"], 
 form select {
     width: 100%;
     padding: 0.75rem; 
     margin-bottom: 1rem;
     
-    background-color: #415A77; /* cor do input mais clara que o fundo */
+    background-color: #415A77;
     color: #E0E1DD;
     
     /* Borda suave e arredondada */
     border: 1px solid #778DA9;
     border-radius: 0.3125rem;
     font-size: 1rem;
-    box-sizing: border-box; /* garante que padding não aumente a largura total */
+    box-sizing: border-box;
 }
 
 /* estilo para placeholder*/
@@ -200,16 +198,16 @@ form input[type="text"]::placeholder {
     opacity: 0.7;
 }
 
-/* Quando o usuário clica */
-form input[type="text"]:focus, 
+
+form input[type="text"]:focus, /* quando alguem clica */
 form select:focus {
     outline: none;
-    border-color: #778DA9; /* Cor de destaque ao focar */
+    border-color: #778DA9; 
     box-shadow: 0 0 0 2px rgba(119, 141, 169, 0.5);
 }
 
-/* Estilo do botão de submit */
-form button[type="submit"] {
+
+form button[type="submit"] { /* estilo do botão de submit */
     width: 100%;
     padding: 0.8rem;
 
@@ -246,8 +244,8 @@ form button[type="submit"]:hover {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s;
     
-    /* longe da disciplina */
-    margin-left: 1rem;
+    
+    margin-left: 1rem; /* longe da disciplina */
 }
 
 /* efeito hover */

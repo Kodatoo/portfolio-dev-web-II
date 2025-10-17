@@ -24,7 +24,7 @@ let numeroProjetos = 2;
 
 let tecnologiasMaisUsadas = ["Python", "JavaScript", "TypeScript"];
 
-// === GET - Renderiza dashboard EJS ===
+
 router.get('/', (req, res) => {
   const dashboardData = {
     title: "Dashboard",
@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
   res.render('pages/dashboard', dashboardData);
 });
 
-// === GET API - Retorna dados em JSON ===
+// retorna em json
 router.get('/api', (req, res) => {
   res.json({
     disciplinas_em_curso,
@@ -45,7 +45,7 @@ router.get('/api', (req, res) => {
   });
 });
 
-// === POST - Adicionar disciplina ===
+
 router.post('/api', (req, res) => {
   const { novaDisciplina, tipo } = req.body;
 
@@ -64,7 +64,7 @@ router.post('/api', (req, res) => {
   res.json({ msg: "Disciplina adicionada com sucesso!", disciplinas_em_curso, disciplinas_concluidas });
 });
 
-// === PUT - Atualizar disciplina ===
+
 router.put('/api', (req, res) => {
   const { index, novoNome, tipo } = req.body;
 
@@ -79,7 +79,7 @@ router.put('/api', (req, res) => {
   res.json({ msg: "Disciplina atualizada com sucesso!", disciplinas_em_curso, disciplinas_concluidas });
 });
 
-// === DELETE - Remover disciplina ===
+
 router.delete('/api', (req, res) => {
   const { tipo, index } = req.body;
 

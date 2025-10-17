@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-
 let disciplinas_em_curso = [
   "Algoritmos Lógica e programação",
   "Engenharia de Software II",
@@ -10,8 +9,7 @@ let disciplinas_em_curso = [
   "Matemática computacional",
   "Técnicas de programação",
   "Desenvolvimento Web II"
-]
-
+];
 
 let disciplinas_concluidas = [
   "Modelagem de banco de dados",
@@ -19,45 +17,49 @@ let disciplinas_concluidas = [
   "Design Digital",
   "Desenvolvimento Web II",
   "Sistemas operacionais e redes"
-]
+];
 
 router.get('/', (req, res) => {
-  
-
-  let paginadisciplina = {
-    title: "Disiciplinas",
+  res.render('pages/disciplinas', {
+    title: "Disciplinas",
     disciplinas_em_curso,
     disciplinas_concluidas
-  }
-
-  router.get('/api', (req, res) => { // rota que mostra as disciplinas em JSON
-    res.json({
-      curso: disciplinas_em_curso,
-      concluidas: disciplinas_concluidas
-    });
-  }); 
-
-  res.render('pages/disciplinas', paginadisciplina)
+  });
 });
 
-router.post('/', (req, res) => {
+router.get('/api', (req, res) => {
+  res.json({
+    curso: disciplinas_em_curso,
+    concluidas: disciplinas_concluidas
+  });
+});
+
+router.post('/api', (req, res) => {
   const { novaDisciplina, tipo } = req.body;
   if (tipo === "curso") {
     disciplinas_em_curso.push(novaDisciplina);
   } else {
     disciplinas_concluidas.push(novaDisciplina);
   }
-  res.redirect('/disciplinas');
+  res.json({
+    msg: "Disciplina adicionada",
+    curso: disciplinas_em_curso,
+    concluidas: disciplinas_concluidas
+  });
 });
 
-
-router.delete('/:tipo/:index', (req, res) => {
-  const { tipo, index } = req.params;
-
-  if (tipo === "curso") disciplinas_em_curso.splice(index, 1);
-  else disciplinas_concluidas.splice(index, 1);
-
-  res.sendStatus(200);
+router.delete('/api', (req, res) => {
+  const { tipo, index } = req.body;
+  if (tipo === "curso") {
+    disciplinas_em_curso.splice(index, 1);
+  } else {
+    disciplinas_concluidas.splice(index, 1);
+  }
+  res.json({
+    msg: "Disciplina removida",
+    curso: disciplinas_em_curso,
+    concluidas: disciplinas_concluidas
+  });
 });
 
 module.exports = router;

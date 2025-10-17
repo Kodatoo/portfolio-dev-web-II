@@ -1,0 +1,43 @@
+### GET página de disciplinas
+GET http://localhost:5000/disciplinas
+Accept: text/html
+
+### GET disciplinas como JSON
+GET http://localhost:5000/disciplinas/api
+Accept: application/json
+
+### POST - Adicionar disciplina em curso
+POST http://localhost:5000/disciplinas/api
+Content-Type: application/json
+
+{
+  "novaDisciplina": "Lógica de Programação",
+  "tipo": "curso"
+}
+
+### POST - Adicionar disciplina concluída
+POST http://localhost:5000/disciplinas/api
+Content-Type: application/json
+
+{
+  "novaDisciplina": "Segurança da Informação",
+  "tipo": "concluida"
+}
+
+### DELETE - Remover disciplina em curso (índice 0)
+DELETE http://localhost:5000/disciplinas/api
+Content-Type: application/json
+
+{
+  "tipo": "curso",
+  "index": 0
+}
+
+### DELETE - Remover disciplina concluída (índice 1)
+DELETE http://localhost:5000/disciplinas/api
+Content-Type: application/json
+
+{
+  "tipo": "concluida",
+  "index": 1
+}
