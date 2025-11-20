@@ -35,3 +35,11 @@ Content-Type: application/json
   "novaDisciplina": "Inteligência Artificial",
   "tipo": "curso"
 }
+
+###post tecnologia
+POST http://localhost:5000/dashboard/apiti
+Content-Type: application/json
+
+{
+  "nova_tecnologia": "teste"
+}

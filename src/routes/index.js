@@ -1,56 +1,72 @@
 const express = require('express');
 const router = express.Router();
 
+// CAMINHO CORRETO:
+const { HomeText } = require('../models');
 
-const texto_original = 
-   "Me chamo Gabriel Kodato, sou estudante de programação, aqui estão meus projetos e aprendizados."
-
-
-let texto_home = {
-   Texto: texto_original
-}
-
-
-router.post('/', (req, res) =>{
-  const novoTexto = req.body.Texto
-
-  if(novoTexto){
-    texto_home.Texto = novoTexto
-    return res.json({
-      message: 'Texto atualizado com sucesso!',
-      textoatual: texto_home.Texto
-    })
-  }
-
-})
-
-router.post('/reset-home', (req, res) => {
-  texto_home.Texto = texto_original
-  res.json({ message: "Texto resetado para o valor original", textoAtual: texto_home.Texto })
-});
-
-router.put('/', (req, res) => {
-  const novoTexto = req.body.Texto
-
-  if (novoTexto) {
-    texto_home.Texto = novoTexto
-    return res.json({
-      message: 'Texto atualizado via PUT com sucesso!',
-      textoAtual: texto_home.Texto
+const seedHome = async () => {
+  const count = await HomeText.count();
+  if (count === 0) {
+    await HomeText.create({
+      texto: "Me chamo Gabriel Kodato, sou estudante de programação, aqui estão meus projetos e aprendizados."
     });
-  } else {
-    return res.status(400).json({ message: 'Texto não fornecido.' })
+  }
+};
+
+router.get('/', async (req, res) => {
+  try {
+    await seedHome();
+    const texto = await HomeText.findOne();
+    res.render('pages/home', { title: "Página Inicial", texto_home: { Texto: texto.texto } });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro no servidor');
   }
 });
 
-router.get('/', (req, res) => {
+router.post('/', async (req, res) => {
+  try {
+    const { Texto } = req.body;
+    if (!Texto) return res.status(400).json({ message: 'Texto não enviado!' });
 
-  let texto_intro = {
-    title: "Página Inicial",
-    texto_home
+    const texto = await HomeText.findOne();
+    texto.texto = Texto;
+    await texto.save();
+
+    res.json({ message: "Texto atualizado com sucesso!", textoatual: texto.texto });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Erro ao salvar' });
   }
+});
 
-  res.render('pages/home', texto_intro);
+router.post('/reset-home', async (req, res) => {
+  try {
+    const texto = await HomeText.findOne();
+    texto.texto = "Me chamo Gabriel Kodato, sou estudante de programação, aqui estão meus projetos e aprendizados.";
+    await texto.save();
+
+    res.json({ message: "Texto resetado para o valor original", textoAtual: texto.texto });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Erro ao resetar' });
+  }
+});
+
+router.put('/', async (req, res) => {
+  try {
+    const { Texto } = req.body;
+    if (!Texto) return res.status(400).json({ message: 'Texto não fornecido.' });
+
+    const texto = await HomeText.findOne();
+    texto.texto = Texto;
+    await texto.save();
+
+    res.json({ message: 'Texto atualizado via PUT com sucesso!', textoAtual: texto.texto });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Erro' });
+  }
 });
 
 module.exports = router;
